@@ -1,0 +1,9 @@
+{
+  "name": "souraj-shil-de",
+  "version": "1.0.0",
+  "description": "Souraj Shil - Data Engineer Portfolio",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

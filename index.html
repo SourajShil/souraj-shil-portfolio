@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>Souraj Shil | Data Engineer</title>
+  <meta name="description" content="Personal portfolio of Souraj Shil - Data Engineer specializing in ETL/ELT pipelines, AWS, PySpark, Apache Airflow, dbt, PostgreSQL, and Data Warehousing." />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            cyber: {
+              50: '#f0fdf4',
+              500: '#10b981',
+              600: '#059669',
+            },
+            neon: {
+              cyan: '#06b6d4',
+              emerald: '#10b981',
+              violet: '#8b5cf6',
+              rose: '#f43f5e',
+              amber: '#f59e0b'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css?v=20260901_0105" />
+</head>
+<body class="bg-[#090d16] text-slate-100 antialiased selection:bg-emerald-500/30 selection:text-emerald-300">
+
+  <!-- Ambient background glow layers -->
+  <div class="fixed inset-0 bg-grid-pattern pointer-events-none opacity-40 z-0"></div>
+  <div class="fixed -top-40 -left-40 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none z-0"></div>
+  <div class="fixed top-1/2 -right-40 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none z-0"></div>
+  <div class="fixed -bottom-40 left-1/3 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl pointer-events-none z-0"></div>
+
+  <!-- Main App Layout Container -->
+  <div class="relative z-10 min-h-screen flex flex-col lg:flex-row">
+
+    <!-- ===================================================================
+         SIDEBAR NAVIGATION (Desktop) / TOP HEADER (Mobile)
+         =================================================================== -->
+    
+    <!-- Mobile Navigation Header -->
+    <header class="lg:hidden sticky top-0 z-50 glass-panel border-b border-slate-800/80 px-4 py-3 flex items-center justify-between">
+      <a href="#hero" class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl overflow-hidden p-0.5 bg-gradient-to-tr from-emerald-500 to-cyan-500 shadow-md shrink-0">
+          <img src="souraj.jpg" alt="Souraj Shil" class="w-full h-full object-cover object-center rounded-[10px]" />
+        </div>
+        <span class="font-heading font-bold text-lg tracking-tight" id="mobile-nav-name">Souraj Shil</span>
+      </a>
+      <div class="flex items-center gap-2">
+        <button id="theme-toggle-mobile" aria-label="Toggle Theme" class="p-2 rounded-lg bg-slate-800/60 hover:bg-slate-700/60 text-slate-300 transition-colors">
+          <i data-lucide="sun" class="w-4 h-4 hidden light-icon"></i>
+          <i data-lucide="moon" class="w-4 h-4 dark-icon"></i>
+        </button>
+        <button id="mobile-menu-btn" aria-label="Open Menu" class="p-2 rounded-lg bg-slate-800/60 hover:bg-slate-700/60 text-slate-300 transition-colors">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-drawer" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden lg:hidden flex flex-col justify-between p-6">
+      <div class="flex justify-between items-center pb-4 border-b border-slate-800">
+        <span class="font-heading font-bold text-xl">Menu</span>
+        <button id="mobile-menu-close" class="p-2 text-slate-400 hover:text-white">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+      <nav class="flex flex-col gap-3 py-6 text-base font-medium">
+        <a href="#hero" class="mobile-nav-item py-2 px-3 rounded-lg hover:bg-slate-800/70 text-slate-300">Overview</a>
+        <a href="#about" class="mobile-nav-item py-2 px-3 rounded-lg hover:bg-slate-800/70 text-slate-300">About Me</a>
+        <a href="#education" class="mobile-nav-item py-2 px-3 rounded-lg hover:bg-slate-800/70 text-slate-300">Education</a>
+        <a href="#projects" class="mobile-nav-item py-2 px-3 rounded-lg hover:bg-slate-800/70 text-slate-300">Data Pipelines &amp; Projects</a>
+        <a href="#skills" class="mobile-nav-item py-2 px-3 rounded-lg hover:bg-slate-800/70 text-slate-300">Skills Matrix</a>
+        <a href="#certifications" class="mobile-nav-item py-2 px-3 rounded-lg hover:bg-slate-800/70 text-slate-300">Certifications</a>
+        <a href="#playground" class="mobile-nav-item py-2 px-3 rounded-lg hover:bg-slate-800/70 text-slate-300">Playground</a>
+        <a href="#contact" class="mobile-nav-item py-2 px-3 rounded-lg hover:bg-slate-800/70 text-slate-300">Contact</a>
+      </nav>
+      <div class="flex items-center justify-center gap-3 pt-4 border-t border-slate-800" id="mobile-social-container">
+        <a href="https://github.com/SourajShil" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="p-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-emerald-400 border border-slate-700/60 transition-all hover:scale-105 inline-flex items-center justify-center" title="GitHub">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/souraj-shil-82692b2b7?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="p-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-emerald-400 border border-slate-700/60 transition-all hover:scale-105 inline-flex items-center justify-center" title="LinkedIn">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="mailto:sourajshil@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email" class="p-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-emerald-400 border border-slate-700/60 transition-all hover:scale-105 inline-flex items-center justify-center" title="Email">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Desktop Sticky Left Sidebar -->
+    <aside class="hidden lg:flex w-72 h-screen sticky top-0 flex-col justify-between p-6 border-r border-slate-800/80 glass-panel shrink-0 overflow-y-auto">
+      <div class="space-y-6">
+        <!-- Brand / Identity -->
+        <div class="space-y-3">
+          <a href="#hero" class="group flex items-center gap-3">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-emerald-500 via-teal-500 to-cyan-500 p-0.5 shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform overflow-hidden shrink-0">
+              <img src="souraj.jpg" alt="Souraj Shil" class="w-full h-full object-cover object-center rounded-[10px]" />
+            </div>
+            <div>
+              <h1 class="font-heading font-bold text-lg text-slate-100 tracking-tight" id="sidebar-name">Souraj Shil</h1>
+              <p class="text-xs text-slate-400 font-mono" id="sidebar-title">Data Engineer</p>
+            </div>
+          </a>
+
+          <!-- Live Status Badge -->
+          <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 status-pulse"></span>
+            <span id="sidebar-status">Open to Data Engineering job roles</span>
+          </div>
+        </div>
+
+        <!-- Navigation Links (Scroll-Spy) -->
+        <nav class="space-y-1 pt-1 text-sm font-medium">
+          <a href="#hero" class="nav-link active flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-800/40">
+            <i data-lucide="home" class="w-4 h-4"></i>
+            <span>Overview</span>
+          </a>
+          <a href="#about" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-800/40">
+            <i data-lucide="user" class="w-4 h-4"></i>
+            <span>About Me</span>
+          </a>
+          <a href="#education" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-800/40">
+            <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+            <span>Education</span>
+          </a>
+          <a href="#projects" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-800/40">
+            <i data-lucide="database" class="w-4 h-4"></i>
+            <span>Data Pipelines</span>
+          </a>
+          <a href="#skills" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-800/40">
+            <i data-lucide="cpu" class="w-4 h-4"></i>
+            <span>Skills Matrix</span>
+          </a>
+          <a href="#certifications" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-800/40">
+            <i data-lucide="award" class="w-4 h-4"></i>
+            <span>Certifications</span>
+          </a>
+          <a href="#playground" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-800/40">
+            <i data-lucide="sparkles" class="w-4 h-4"></i>
+            <span>Playground</span>
+          </a>
+          <a href="#contact" class="nav-link flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-800/40">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            <span>Get in Touch</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Sidebar Footer: Socials & Theme Toggle -->
+      <div class="space-y-4 pt-4 border-t border-slate-800/80">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-mono text-slate-500 uppercase tracking-wider">Connect</span>
+          <button id="theme-toggle-desktop" aria-label="Toggle Theme" class="p-2 rounded-lg bg-slate-800/60 hover:bg-slate-700/60 text-slate-400 hover:text-slate-200 transition-colors">
+            <i data-lucide="sun" class="w-4 h-4 hidden light-icon"></i>
+            <i data-lucide="moon" class="w-4 h-4 dark-icon"></i>
+          </button>
+        </div>
+        
+        <div class="flex items-center gap-2.5 flex-wrap" id="sidebar-social-container">
+          <a href="https://github.com/SourajShil" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="p-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-emerald-400 border border-slate-700/60 transition-all hover:scale-105 inline-flex items-center justify-center" title="GitHub">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/souraj-shil-82692b2b7?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="p-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-emerald-400 border border-slate-700/60 transition-all hover:scale-105 inline-flex items-center justify-center" title="LinkedIn">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="mailto:sourajshil@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email" class="p-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-emerald-400 border border-slate-700/60 transition-all hover:scale-105 inline-flex items-center justify-center" title="Email">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </a>
+        </div>
+
+        <div class="text-[11px] text-slate-500 font-mono">
+          &copy; <span id="current-year">2026</span> Souraj Shil &bull; Data Engineer
+        </div>
+      </div>
+    </aside>
+
+    <!-- ===================================================================
+         MAIN CONTENT AREA
+         =================================================================== -->
+    <main class="flex-1 min-w-0 max-w-5xl mx-auto px-4 sm:px-8 lg:px-12 py-10 space-y-28">
+
+      <!-- ---------------------------------------------------------------
+           1. HERO SECTION (Minimalist Open Floating Fractal Tree)
+           --------------------------------------------------------------- -->
+      <section id="hero" class="min-h-[85vh] flex flex-col justify-center pt-4 lg:pt-8 scroll-mt-20">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          
+          <!-- Hero Intro Left -->
+          <div class="lg:col-span-7 space-y-6">
+            
+            <div class="space-y-2">
+              <div class="font-mono text-emerald-400 text-sm font-semibold tracking-wide flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                <span id="hero-greeting">Hi, I'm</span>
+              </div>
+              <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight text-white" id="hero-name">
+                Souraj Shil
+              </h1>
+              <div class="text-xl sm:text-2xl font-mono text-slate-400 h-8 flex items-center">
+                <span id="typewriter-text" class="text-cyan-400">Data Engineer</span>
+                <span class="typewriter-cursor"></span>
+              </div>
+            </div>
+
+            <p class="text-slate-400 text-base sm:text-lg leading-relaxed max-w-xl" id="hero-bio-short">
+              Building resilient, production-grade ETL/ELT pipelines, star-schema data warehouses, and automated cloud workflows using Python, PySpark, Airflow, dbt, PostgreSQL, and AWS.
+            </p>
+
+            <!-- Hero Action Buttons -->
+            <div class="flex flex-wrap gap-3.5 pt-2">
+              <a href="#contact" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 font-semibold text-sm hover:opacity-95 hover:shadow-lg hover:shadow-emerald-500/25 transition-all">
+                <i data-lucide="send" class="w-4 h-4"></i>
+                <span>Say Hi!</span>
+              </a>
+              <a href="#projects" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl glass-panel text-slate-200 font-medium text-sm hover:text-emerald-400 hover:border-emerald-500/40 transition-all">
+                <i data-lucide="database" class="w-4 h-4"></i>
+                <span>Explore Pipelines</span>
+              </a>
+              <a id="resume-btn" href="Souraj_Shil_Resume_Latest.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800/60 border border-slate-700/60 text-slate-300 font-medium text-sm hover:text-white hover:bg-slate-700/60 transition-all">
+                <i data-lucide="file-text" class="w-4 h-4"></i>
+                <span>View CV</span>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Hero Circular Viewport with Balanced Medium Fractal Tree -->
+          <div class="lg:col-span-5 flex items-center justify-center relative">
+            <div class="canvas-wrapper flex items-center justify-center">
+              <canvas id="fractal-canvas" class="cursor-pointer" title="Move your cursor across the tree to watch the branches open & close smoothly!"></canvas>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ---------------------------------------------------------------
+           2. ABOUT ME SECTION
+           --------------------------------------------------------------- -->
+      <section id="about" class="space-y-8 scroll-mt-20">
+        <div class="flex items-center gap-3 border-b border-slate-800/80 pb-4">
+          <div class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-mono text-sm">
+            01
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-heading font-bold text-white tracking-tight">About Me</h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <!-- Story Text -->
+          <div class="lg:col-span-7 space-y-4 text-slate-300 leading-relaxed" id="about-paragraphs-container">
+            <p class="leading-relaxed">I am a Computer Applications undergraduate specialized in Data Engineering, passionate about architecting scalable, resilient end-to-end ETL/ELT pipelines and modern cloud data warehouses.</p>
+            <p class="leading-relaxed">My hands-on expertise spans designing production-grade data pipelines using Python, SQL, PySpark, Apache Airflow, dbt, PostgreSQL, Docker, and AWS (S3, Glue, Lambda, Redshift). I build systems with a focus on data quality gating, incremental processing, star-schema modeling, and idempotent writes.</p>
+            <p class="leading-relaxed">From ingesting unstructured and transactional data to building dimensional data marts and real-time BI dashboards with QuickSight, Power BI, and Metabase, I ensure data is clean, reliable, and analytics-ready.</p>
+          </div>
+
+          <!-- Highlight Metric Cards -->
+          <div class="lg:col-span-5 grid grid-cols-2 gap-4" id="about-highlights-container">
+            <div class="glass-panel p-4 rounded-xl text-center space-y-1 hover:border-emerald-500/40 transition-colors">
+              <div class="text-2xl font-heading font-bold text-emerald-400">5+</div>
+              <div class="text-xs font-mono text-slate-400">Data Pipelines Built</div>
+            </div>
+            <div class="glass-panel p-4 rounded-xl text-center space-y-1 hover:border-emerald-500/40 transition-colors">
+              <div class="text-2xl font-heading font-bold text-emerald-400">10+</div>
+              <div class="text-xs font-mono text-slate-400">Cloud Services (AWS &amp; Fabric)</div>
+            </div>
+            <div class="glass-panel p-4 rounded-xl text-center space-y-1 hover:border-emerald-500/40 transition-colors">
+              <div class="text-2xl font-heading font-bold text-emerald-400">6</div>
+              <div class="text-xs font-mono text-slate-400">Certifications Earned</div>
+            </div>
+            <div class="glass-panel p-4 rounded-xl text-center space-y-1 hover:border-emerald-500/40 transition-colors">
+              <div class="text-2xl font-heading font-bold text-emerald-400">99.9%</div>
+              <div class="text-xs font-mono text-slate-400">Pipeline Reliability</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------------------------------------------------------------
+           3. EDUCATION SECTION
+           --------------------------------------------------------------- -->
+      <section id="education" class="space-y-8 scroll-mt-20">
+        <div class="flex items-center gap-3 border-b border-slate-800/80 pb-4">
+          <div class="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-mono text-sm">
+            02
+          </div>
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-heading font-bold text-white tracking-tight">Education</h2>
+            <p class="text-xs text-slate-400 font-mono">Academic Background &amp; Degrees</p>
+          </div>
+        </div>
+
+        <!-- Education Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="education-list-container">
+          <div class="glass-panel p-5 rounded-xl space-y-2 hover:border-emerald-500/40 transition-colors">
+            <div class="text-xs font-mono text-emerald-400">2024 — 2027 (Pursuing)</div>
+            <h4 class="font-heading font-bold text-white text-base">Bachelor of Computer Applications (BCA)</h4>
+            <div class="text-xs text-slate-400 font-mono">Assam Down Town University &bull; Assam, India</div>
+            <p class="text-xs text-slate-300 pt-1 leading-relaxed">Core focus on Data Engineering, Database Systems, Data Structures &amp; Algorithms, and Cloud Computing.</p>
+          </div>
+          <div class="glass-panel p-5 rounded-xl space-y-2 hover:border-emerald-500/40 transition-colors">
+            <div class="text-xs font-mono text-emerald-400">2024</div>
+            <h4 class="font-heading font-bold text-white text-base">Senior Secondary (12th CBSE)</h4>
+            <div class="text-xs text-slate-400 font-mono">CBSE Board &bull; Tripura, India</div>
+            <p class="text-xs text-slate-300 pt-1 leading-relaxed">Scored 67% with focus on Computer Science and Mathematics.</p>
+          </div>
+          <div class="glass-panel p-5 rounded-xl space-y-2 hover:border-emerald-500/40 transition-colors">
+            <div class="text-xs font-mono text-emerald-400">2022</div>
+            <h4 class="font-heading font-bold text-white text-base">Secondary School Examination (10th CBSE)</h4>
+            <div class="text-xs text-slate-400 font-mono">CBSE Board &bull; Tripura, India</div>
+            <p class="text-xs text-slate-300 pt-1 leading-relaxed">Scored 55.6% foundational academics.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------------------------------------------------------------
+           4. FEATURED DATA ENGINEERING PIPELINES & PROJECTS
+           --------------------------------------------------------------- -->
+      <section id="projects" class="space-y-8 scroll-mt-20">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800/80 pb-4">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-violet-500/10 border border-violet-500/30 flex items-center justify-center text-violet-400 font-mono text-sm">
+              03
+            </div>
+            <div>
+              <h2 class="text-2xl sm:text-3xl font-heading font-bold text-white tracking-tight">Data Engineering Projects</h2>
+              <p class="text-xs text-slate-400 font-mono">End-to-End ETL, Spark, Cloud &amp; Lakehouse Solutions</p>
+            </div>
+          </div>
+
+          <!-- Project Filter Category Pills -->
+          <div class="flex items-center gap-1.5 overflow-x-auto pb-1 text-xs font-mono" id="project-filters">
+            <button class="project-filter-btn active px-3 py-1.5 rounded-lg bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 transition-all shrink-0" data-category="all">All</button>
+            <button class="project-filter-btn px-3 py-1.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition-all shrink-0" data-category="ETL & Analytics">ETL &amp; Analytics</button>
+            <button class="project-filter-btn px-3 py-1.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition-all shrink-0" data-category="ETL & dbt">ETL &amp; dbt</button>
+            <button class="project-filter-btn px-3 py-1.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition-all shrink-0" data-category="Big Data & Spark">Big Data</button>
+            <button class="project-filter-btn px-3 py-1.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition-all shrink-0" data-category="Lakehouse & BI">Fabric &amp; BI</button>
+            <button class="project-filter-btn px-3 py-1.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition-all shrink-0" data-category="ML & Analytics">ML &amp; Analytics</button>
+          </div>
+        </div>
+
+        <!-- Project Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="projects-grid-container">
+          
+          <!-- Project: Stock Data Pipeline -->
+          <div class="project-card glass-panel rounded-2xl overflow-hidden flex flex-col justify-between border border-slate-800 hover:border-emerald-500/50 transition-all" data-category="ETL & Analytics">
+            <div class="p-6 space-y-4">
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">ETL &amp; Analytics</span>
+                <span class="text-xs font-mono text-slate-500">Automated Pipeline</span>
+              </div>
+              <h3 class="text-xl font-heading font-bold text-white leading-snug">Stock Data Pipeline</h3>
+              <p class="text-xs text-cyan-400 font-mono">Modular Market-Data Ingestion, PostgreSQL Loading &amp; Streamlit Dashboard</p>
+              <p class="text-sm text-slate-300 leading-relaxed">A modular, automated market-data engineering pipeline that extracts live and historical stock data with yfinance, cleans and structures with Pandas, loads into PostgreSQL, and surfaces interactive visual analytics on Streamlit with APScheduler automation.</p>
+              <ul class="space-y-1.5 text-xs text-slate-400 leading-relaxed list-disc list-inside">
+                <li>Built a modular stock-data pipeline using Python, Pandas, and yfinance for market-data ingestion.</li>
+                <li>Structured fetch, transform, PostgreSQL load, Streamlit dashboard, and APScheduler components.</li>
+                <li>Prepared the pipeline for automated execution and interactive stock-data visualization.</li>
+              </ul>
+            </div>
+            <div class="p-6 pt-0 space-y-4">
+              <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
+                <span class="tech-badge">Python</span><span class="tech-badge">Pandas</span><span class="tech-badge">yfinance</span><span class="tech-badge">PostgreSQL</span><span class="tech-badge">Streamlit</span><span class="tech-badge">APScheduler</span><span class="tech-badge">ETL</span>
+              </div>
+              <div class="flex items-center justify-between pt-2">
+                <a href="https://github.com/SourajShil" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-mono text-slate-300 hover:text-emerald-400 transition-colors">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span>View Repository</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Project 1 (End-to-End E-Commerce Data Pipeline) -->
+          <div class="project-card glass-panel rounded-2xl overflow-hidden flex flex-col justify-between border border-slate-800 hover:border-emerald-500/50 transition-all" data-category="ETL & dbt">
+            <div class="p-6 space-y-4">
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">ETL &amp; dbt</span>
+                <span class="text-xs font-mono text-slate-500">Production Ready</span>
+              </div>
+              <h3 class="text-xl font-heading font-bold text-white leading-snug">End-to-End E-Commerce Data Pipeline</h3>
+              <p class="text-xs text-cyan-400 font-mono">Airflow Orchestration, dbt Data Modeling &amp; Dockerized Metabase</p>
+              <p class="text-sm text-slate-300 leading-relaxed">A production-style daily ETL/ELT pipeline simulating synthetic customer transactions with Python Faker, ingested into PostgreSQL, structured with dbt multi-layer data models, and served on Metabase dashboards.</p>
+              <ul class="space-y-1.5 text-xs text-slate-400 leading-relaxed list-disc list-inside">
+                <li>Built automated daily workflow: Python (Faker synthetic stream) &rarr; PostgreSQL &rarr; dbt (staging / intermediate / marts) &rarr; Metabase.</li>
+                <li>Implemented incremental dbt models, idempotent writes, watermarking, and automated dbt test assertions.</li>
+                <li>Designed analytics marts for daily-sales velocity, product-performance KPIs, and customer-RFM clusters.</li>
+                <li>Configured robust task retry policies, failure alerting, and audit logging patterns in Apache Airflow.</li>
+              </ul>
+            </div>
+            <div class="p-6 pt-0 space-y-4">
+              <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
+                <span class="tech-badge">Apache Airflow</span><span class="tech-badge">dbt</span><span class="tech-badge">PostgreSQL</span><span class="tech-badge">Docker</span><span class="tech-badge">Metabase</span><span class="tech-badge">Python</span><span class="tech-badge">Data Modeling</span>
+              </div>
+              <div class="flex items-center justify-between pt-2">
+                <a href="https://github.com/SourajShil" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-mono text-slate-300 hover:text-emerald-400 transition-colors">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span>View Repository</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card glass-panel rounded-2xl overflow-hidden flex flex-col justify-between border border-slate-800 hover:border-emerald-500/50 transition-all" data-category="Big Data & Spark">
+            <div class="p-6 space-y-4">
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-violet-500/10 text-violet-400 border border-violet-500/30">Big Data &amp; Spark</span>
+                <span class="text-xs font-mono text-slate-500">Production Ready</span>
+              </div>
+              <h3 class="text-xl font-heading font-bold text-white leading-snug">Books Data Pipeline</h3>
+              <p class="text-xs text-cyan-400 font-mono">Hourly Web Scraping, PySpark Deduplication &amp; Terraform IaC</p>
+              <p class="text-sm text-slate-300 leading-relaxed">An hourly automated data extraction and transformation pipeline that scrapes book catalog data, stores raw JSON in S3, deduplicates and cleans with PySpark, partitions into Parquet, and upserts into Amazon Redshift.</p>
+              <ul class="space-y-1.5 text-xs text-slate-400 leading-relaxed list-disc list-inside">
+                <li>Hourly scraping pipeline: Web Scraping &rarr; Raw JSON in S3 &rarr; PySpark cleaning &amp; deduplication &rarr; Partitioned Parquet &rarr; Redshift Upsert.</li>
+                <li>Provisioned and managed full AWS infrastructure as code using Terraform.</li>
+                <li>Integrated Airflow DAGs for hourly batch scheduling, schema drift checks, and operational monitoring.</li>
+              </ul>
+            </div>
+            <div class="p-6 pt-0 space-y-4">
+              <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
+                <span class="tech-badge">Apache Airflow</span><span class="tech-badge">PySpark</span><span class="tech-badge">Amazon S3</span><span class="tech-badge">Amazon Redshift</span><span class="tech-badge">Terraform</span><span class="tech-badge">Web Scraping</span><span class="tech-badge">AWS</span>
+              </div>
+              <div class="flex items-center justify-between pt-2">
+                <a href="https://github.com/SourajShil" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-mono text-slate-300 hover:text-emerald-400 transition-colors">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span>View Repository</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="project-card glass-panel rounded-2xl overflow-hidden flex flex-col justify-between border border-slate-800 hover:border-emerald-500/50 transition-all" data-category="Lakehouse & BI">
+            <div class="p-6 space-y-4">
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">Lakehouse &amp; BI</span>
+                <span class="text-xs font-mono text-slate-500">Production Ready</span>
+              </div>
+              <h3 class="text-xl font-heading font-bold text-white leading-snug">Superstore Sales Data Engineering &amp; BI Dashboard</h3>
+              <p class="text-xs text-cyan-400 font-mono">Microsoft Fabric Lakehouse, Notebooks &amp; Power BI</p>
+              <p class="text-sm text-slate-300 leading-relaxed">A comprehensive Lakehouse data engineering project on Microsoft Fabric ingesting retail sales data, cleaning via PySpark/Python and SQL Notebooks, and surfacing insights through an interactive Power BI dashboard.</p>
+              <ul class="space-y-1.5 text-xs text-slate-400 leading-relaxed list-disc list-inside">
+                <li>Ingested and structured Superstore sales data inside Microsoft Fabric Lakehouse.</li>
+                <li>Authored PySpark, Python, and SQL data extraction, cleansing, and curation pipelines in Fabric Notebooks.</li>
+                <li>Created an analytics-ready cleaned_superstore_sales gold layer dataset.</li>
+                <li>Built dynamic Power BI dashboard highlighting KPIs for total sales, regional performance, product categories, and temporal growth trends.</li>
+              </ul>
+            </div>
+            <div class="p-6 pt-0 space-y-4">
+              <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
+                <span class="tech-badge">Microsoft Fabric</span><span class="tech-badge">Lakehouse</span><span class="tech-badge">PySpark</span><span class="tech-badge">Python</span><span class="tech-badge">SQL</span><span class="tech-badge">Power BI</span><span class="tech-badge">Data Analytics</span>
+              </div>
+              <div class="flex items-center justify-between pt-2">
+                <a href="https://github.com/SourajShil" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-mono text-slate-300 hover:text-emerald-400 transition-colors">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span>View Repository</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5 -->
+          <div class="project-card glass-panel rounded-2xl overflow-hidden flex flex-col justify-between border border-slate-800 hover:border-emerald-500/50 transition-all" data-category="ML & Analytics">
+            <div class="p-6 space-y-4">
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">ML &amp; Analytics</span>
+                <span class="text-xs font-mono text-slate-500">Interactive App</span>
+              </div>
+              <h3 class="text-xl font-heading font-bold text-white leading-snug">E-Commerce Product Recommendation System</h3>
+              <p class="text-xs text-cyan-400 font-mono">Hybrid Collaborative &amp; Content-Based Filtering with Streamlit</p>
+              <p class="text-sm text-slate-300 leading-relaxed">A machine learning recommendation engine combining Matrix Factorization (SVD) collaborative filtering and TF-IDF cosine similarity content-based filtering, exposed through a responsive Streamlit web application.</p>
+              <ul class="space-y-1.5 text-xs text-slate-400 leading-relaxed list-disc list-inside">
+                <li>Engineered hybrid recommendation model combining SVD matrix factorization and TF-IDF text embeddings.</li>
+                <li>Evaluated recommendation ranking performance rigorously using Precision@5, Recall@5, and NDCG@5 metrics.</li>
+                <li>Deployed interactive user interface on Streamlit for real-time personalized product discovery.</li>
+              </ul>
+            </div>
+            <div class="p-6 pt-0 space-y-4">
+              <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
+                <span class="tech-badge">Python</span><span class="tech-badge">Pandas</span><span class="tech-badge">Scikit-Surprise</span><span class="tech-badge">Streamlit</span><span class="tech-badge">TF-IDF</span><span class="tech-badge">Machine Learning</span>
+              </div>
+              <div class="flex items-center justify-between pt-2">
+                <a href="https://github.com/SourajShil" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-mono text-slate-300 hover:text-emerald-400 transition-colors">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span>View Repository</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ---------------------------------------------------------------
+           5. TECHNICAL SKILLS MATRIX SECTION
+           --------------------------------------------------------------- -->
+      <section id="skills" class="space-y-8 scroll-mt-20">
+        <div class="flex items-center gap-3 border-b border-slate-800/80 pb-4">
+          <div class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-mono text-sm">
+            04
+          </div>
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-heading font-bold text-white tracking-tight">Technical Skills Matrix</h2>
+            <p class="text-xs text-slate-400 font-mono">Languages, Warehousing, Big Data, Cloud, &amp; Orchestration</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="skills-grid-container">
+          <div class="glass-panel p-5 rounded-xl space-y-3 hover:border-emerald-500/40 transition-colors">
+            <h4 class="font-heading font-bold text-white text-sm">Languages</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/15 text-emerald-300 border border-emerald-500/30"><span>Python</span><span class="text-[10px] text-emerald-400 font-bold">&bull; Intermediate</span></span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/15 text-emerald-300 border border-emerald-500/30"><span>SQL</span><span class="text-[10px] text-emerald-400 font-bold">&bull; Intermediate</span></span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-slate-800/80 text-slate-400 border border-slate-700/60"><span>C</span><span class="text-[10px] text-slate-500 font-bold">&bull; Beginner</span></span>
+            </div>
+          </div>
+          <div class="glass-panel p-5 rounded-xl space-y-3 hover:border-emerald-500/40 transition-colors">
+            <h4 class="font-heading font-bold text-white text-sm">Data Engineering</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/15 text-emerald-300 border border-emerald-500/30"><span>ETL/ELT</span><span class="text-[10px] text-emerald-400 font-bold">&bull; Intermediate</span></span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/15 text-emerald-300 border border-emerald-500/30"><span>Data Quality</span><span class="text-[10px] text-emerald-400 font-bold">&bull; Intermediate</span></span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/15 text-emerald-300 border border-emerald-500/30"><span>Incremental Loads</span><span class="text-[10px] text-emerald-400 font-bold">&bull; Intermediate</span></span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/15 text-emerald-300 border border-emerald-500/30"><span>Data Warehousing</span><span class="text-[10px] text-emerald-400 font-bold">&bull; Intermediate</span></span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/15 text-emerald-300 border border-emerald-500/30"><span>Star Schema</span><span class="text-[10px] text-emerald-400 font-bold">&bull; Intermediate</span></span>
+            </div>
+          </div>
+          <div class="glass-panel p-5 rounded-xl space-y-3 hover:border-emerald-500/40 transition-colors">
+            <h4 class="font-heading font-bold text-white text-sm">Big Data</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/15 text-emerald-300 border border-emerald-500/30"><span>Apache Spark</span><span class="text-[10px] text-emerald-400 font-bold">&bull; Intermediate</span></span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/15 text-emerald-300 border border-emerald-500/30"><span>PySpark</span><span class="text-[10px] text-emerald-400 font-bold">&bull; Intermediate</span></span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/15 text-emerald-300 border border-emerald-500/30"><span>Parquet</span><span class="text-[10px] text-emerald-400 font-bold">&bull; Intermediate</span></span>
+            </div>
+          </div>
+          <div class="glass-panel p-5 rounded-xl space-y-3 hover:border-emerald-500/40 transition-colors">
+            <h4 class="font-heading font-bold text-white text-sm">AWS Cloud Stack</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/15 text-emerald-300 border border-emerald-500/30"><span>Amazon S3</span><span class="text-[10px] text-emerald-400 font-bold">&bull; Intermediate</span></span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/15 text-emerald-300 border border-emerald-500/30"><span>AWS Glue</span><span class="text-[10px] text-emerald-400 font-bold">&bull; Intermediate</span></span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/15 text-emerald-300 border border-emerald-500/30"><span>AWS Lambda</span><span class="text-[10px] text-emerald-400 font-bold">&bull; Intermediate</span></span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/15 text-emerald-300 border border-emerald-500/30"><span>Amazon Redshift</span><span class="text-[10px] text-emerald-400 font-bold">&bull; Intermediate</span></span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-slate-800/80 text-slate-400 border border-slate-700/60"><span>EventBridge</span><span class="text-[10px] text-slate-500 font-bold">&bull; Beginner</span></span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-slate-800/80 text-slate-400 border border-slate-700/60"><span>CloudWatch</span><span class="text-[10px] text-slate-500 font-bold">&bull; Beginner</span></span>
+            </div>
+          </div>
+          <div class="glass-panel p-5 rounded-xl space-y-3 hover:border-emerald-500/40 transition-colors">
+            <h4 class="font-heading font-bold text-white text-sm">Orchestration &amp; BI</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/15 text-emerald-300 border border-emerald-500/30"><span>Apache Airflow</span><span class="text-[10px] text-emerald-400 font-bold">&bull; Intermediate</span></span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/15 text-emerald-300 border border-emerald-500/30"><span>dbt</span><span class="text-[10px] text-emerald-400 font-bold">&bull; Intermediate</span></span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/15 text-emerald-300 border border-emerald-500/30"><span>Power BI</span><span class="text-[10px] text-emerald-400 font-bold">&bull; Intermediate</span></span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/15 text-emerald-300 border border-emerald-500/30"><span>Metabase</span><span class="text-[10px] text-emerald-400 font-bold">&bull; Intermediate</span></span>
+            </div>
+          </div>
+          <div class="glass-panel p-5 rounded-xl space-y-3 hover:border-emerald-500/40 transition-colors">
+            <h4 class="font-heading font-bold text-white text-sm">Tools &amp; Infrastructure</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/15 text-emerald-300 border border-emerald-500/30"><span>PostgreSQL</span><span class="text-[10px] text-emerald-400 font-bold">&bull; Intermediate</span></span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/15 text-emerald-300 border border-emerald-500/30"><span>Docker</span><span class="text-[10px] text-emerald-400 font-bold">&bull; Intermediate</span></span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-slate-800/80 text-slate-400 border border-slate-700/60"><span>Terraform</span><span class="text-[10px] text-slate-500 font-bold">&bull; Beginner</span></span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/15 text-emerald-300 border border-emerald-500/30"><span>Git &amp; GitHub</span><span class="text-[10px] text-emerald-400 font-bold">&bull; Intermediate</span></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------------------------------------------------------------
+           6. PROFESSIONAL CERTIFICATIONS SECTION
+           --------------------------------------------------------------- -->
+      <section id="certifications" class="space-y-8 scroll-mt-20">
+        <div class="flex items-center gap-3 border-b border-slate-800/80 pb-4">
+          <div class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-mono text-sm">
+            05
+          </div>
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-heading font-bold text-white tracking-tight">Certifications &amp; Credentials</h2>
+            <p class="text-xs text-slate-400 font-mono">Verified training from IBM, Coursera, and Industry programs</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="certifications-grid-container">
+          <div class="glass-panel p-5 rounded-xl space-y-2 hover:border-emerald-500/40 transition-colors">
+            <div class="text-[11px] font-mono text-cyan-400 font-semibold uppercase">IBM</div>
+            <h4 class="font-heading font-bold text-white text-sm">Introduction to Data Engineering</h4>
+            <div class="text-xs text-slate-400 font-mono">Core ETL, Big Data &amp; Data Pipeline Architecture</div>
+          </div>
+          <div class="glass-panel p-5 rounded-xl space-y-2 hover:border-emerald-500/40 transition-colors">
+            <div class="text-[11px] font-mono text-cyan-400 font-semibold uppercase">IBM</div>
+            <h4 class="font-heading font-bold text-white text-sm">Introduction to Data Science</h4>
+            <div class="text-xs text-slate-400 font-mono">Data Analysis, Python, SQL &amp; Statistics</div>
+          </div>
+          <div class="glass-panel p-5 rounded-xl space-y-2 hover:border-emerald-500/40 transition-colors">
+            <div class="text-[11px] font-mono text-emerald-400 font-semibold uppercase">Coursera</div>
+            <h4 class="font-heading font-bold text-white text-sm">C for Everyone: Programming Fundamentals</h4>
+            <div class="text-xs text-slate-400 font-mono">Algorithms, Pointers, Memory &amp; Problem Solving</div>
+          </div>
+          <div class="glass-panel p-5 rounded-xl space-y-2 hover:border-emerald-500/40 transition-colors">
+            <div class="text-[11px] font-mono text-emerald-400 font-semibold uppercase">Coursera / GitHub</div>
+            <h4 class="font-heading font-bold text-white text-sm">Introduction to Git &amp; GitHub</h4>
+            <div class="text-xs text-slate-400 font-mono">Version Control, Branching, Pull Requests &amp; CI/CD</div>
+          </div>
+          <div class="glass-panel p-5 rounded-xl space-y-2 hover:border-emerald-500/40 transition-colors">
+            <div class="text-[11px] font-mono text-violet-400 font-semibold uppercase">AI Foundations</div>
+            <h4 class="font-heading font-bold text-white text-sm">Introduction to Artificial Intelligence (AI)</h4>
+            <div class="text-xs text-slate-400 font-mono">Neural Networks, Machine Learning &amp; AI Ethics</div>
+          </div>
+          <div class="glass-panel p-5 rounded-xl space-y-2 hover:border-emerald-500/40 transition-colors">
+            <div class="text-[11px] font-mono text-amber-400 font-semibold uppercase">Systems</div>
+            <h4 class="font-heading font-bold text-white text-sm">Introduction to Contemporary Operating Systems</h4>
+            <div class="text-xs text-slate-400 font-mono">Linux Kernels, Process Management &amp; Cloud Infrastructure</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------------------------------------------------------------
+           6. INTERACTIVE PLAYGROUND / NEURAL SANDBOX
+           --------------------------------------------------------------- -->
+      <section id="playground" class="space-y-6 scroll-mt-20">
+        <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400 font-mono text-sm">
+              06
+            </div>
+            <div>
+              <h2 class="text-2xl sm:text-3xl font-heading font-bold text-white tracking-tight">Data Stream &amp; Neural Sandbox</h2>
+              <p class="text-xs text-slate-400 font-mono">Interactive node physics toy &bull; Click to burst data particles</p>
+            </div>
+          </div>
+
+          <div class="text-xs font-mono px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-emerald-400" id="playground-energy-counter">
+            0 Data Packets
+          </div>
+        </div>
+
+        <!-- Playground Canvas Box -->
+        <div class="glass-panel rounded-2xl p-4 space-y-3">
+          <div class="relative w-full h-80 rounded-xl overflow-hidden bg-slate-950/80 border border-slate-800/80">
+            <canvas id="playground-canvas"></canvas>
+            <div class="absolute top-3 left-3 bg-slate-900/80 backdrop-blur px-2.5 py-1 rounded-lg text-[11px] font-mono text-slate-300 border border-slate-800 pointer-events-none">
+              Click/Tap to inject packets &bull; Hover to attract
+            </div>
+          </div>
+
+          <!-- Playground Controls -->
+          <div class="flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+            <div class="flex items-center gap-1.5">
+              <span class="text-slate-400 mr-1">Stream Mode:</span>
+              <button class="pg-mode-btn active px-2.5 py-1 rounded-lg bg-slate-800 text-cyan-300 border border-slate-700" data-mode="attract">Attract</button>
+              <button class="pg-mode-btn px-2.5 py-1 rounded-lg bg-slate-800 text-slate-400 border border-slate-700" data-mode="repel">Repel</button>
+              <button class="pg-mode-btn px-2.5 py-1 rounded-lg bg-slate-800 text-slate-400 border border-slate-700" data-mode="orbit">Vortex</button>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <button id="btn-pg-explode" class="px-3 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 flex items-center gap-1">
+                <i data-lucide="flame" class="w-3.5 h-3.5 text-rose-400"></i>
+                <span>Burst Stream</span>
+              </button>
+              <button id="btn-pg-reset" class="px-3 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 flex items-center gap-1">
+                <i data-lucide="refresh-cw" class="w-3.5 h-3.5 text-slate-400"></i>
+                <span>Reset</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------------------------------------------------------------
+           7. GET IN TOUCH / CONTACT SECTION
+           --------------------------------------------------------------- -->
+      <section id="contact" class="space-y-8 scroll-mt-20 pb-16">
+        <div class="flex items-center gap-3 border-b border-slate-800/80 pb-4">
+          <div class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-mono text-sm">
+            07
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-heading font-bold text-white tracking-tight">Get In Touch</h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          
+          <!-- Contact Info Card -->
+          <div class="lg:col-span-5 glass-panel p-6 rounded-2xl space-y-6">
+            <div class="space-y-2">
+              <h3 class="text-xl font-heading font-bold text-white">Let's discuss Data Engineering opportunities!</h3>
+              <p class="text-sm text-slate-400 leading-relaxed">
+                Whether you're looking for a dedicated Data Engineer to build reliable pipelines, an intern for cloud data projects, or simply want to talk Big Data &amp; SQL, my inbox is always open.
+              </p>
+            </div>
+
+            <div class="space-y-3 pt-2">
+              <div class="flex items-center justify-between p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-emerald-500/30 transition-colors">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <div class="text-[11px] text-slate-500 font-mono">DIRECT EMAIL</div>
+                    <div class="text-sm font-mono text-slate-200" id="contact-email-text">sourajshil@gmail.com</div>
+                  </div>
+                </div>
+                <button id="btn-copy-email" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors" title="Copy email address">
+                  <i data-lucide="copy" class="w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Social Links Grid -->
+            <div class="pt-2">
+              <div class="text-xs font-mono text-slate-500 uppercase tracking-wider mb-3">Connect Online</div>
+              <div class="flex items-center gap-2.5 flex-wrap" id="contact-social-container">
+                <a href="https://github.com/SourajShil" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3.5 py-2.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 text-slate-300 hover:text-emerald-400 border border-slate-800 hover:border-emerald-500/40 text-xs font-mono transition-all">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span>GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/souraj-shil-82692b2b7?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3.5 py-2.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 text-slate-300 hover:text-emerald-400 border border-slate-800 hover:border-emerald-500/40 text-xs font-mono transition-all">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                  <span>LinkedIn</span>
+                </a>
+                <a href="mailto:sourajshil@gmail.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3.5 py-2.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 text-slate-300 hover:text-emerald-400 border border-slate-800 hover:border-emerald-500/40 text-xs font-mono transition-all">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                  <span>Email</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Contact Form -->
+          <div class="lg:col-span-7 glass-panel p-6 rounded-2xl">
+            <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+              <!-- Web3Forms Configuration -->
+              <input type="hidden" name="access_key" value="44995f8d-573a-4e7b-90a8-9d85639b177d" />
+              <input type="hidden" name="from_name" value="Portfolio Contact Form" />
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="space-y-1.5">
+                  <label for="contact-name" class="block text-xs font-mono text-slate-400">YOUR NAME</label>
+                  <input type="text" id="contact-name" name="name" required placeholder="Recruiter / Collaborator" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-sm transition-colors" />
+                </div>
+                <div class="space-y-1.5">
+                  <label for="contact-email" class="block text-xs font-mono text-slate-400">YOUR EMAIL</label>
+                  <input type="email" id="contact-email" name="email" required placeholder="recruiter@company.com" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-sm transition-colors" />
+                </div>
+              </div>
+
+              <div class="space-y-1.5">
+                <label for="contact-subject" class="block text-xs font-mono text-slate-400">SUBJECT</label>
+                <input type="text" id="contact-subject" name="subject" required placeholder="Data Engineering Opportunity / Project" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-sm transition-colors" />
+              </div>
+
+              <div class="space-y-1.5">
+                <label for="contact-message" class="block text-xs font-mono text-slate-400">MESSAGE</label>
+                <textarea id="contact-message" name="message" rows="4" required placeholder="Hi Souraj, I came across your Data Engineering portfolio and would like to discuss..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-100 placeholder-slate-600 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-sm transition-colors resize-none"></textarea>
+              </div>
+
+              <button type="submit" id="btn-submit-contact" class="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 font-semibold text-sm hover:opacity-95 hover:shadow-lg hover:shadow-emerald-500/25 flex items-center justify-center gap-2 transition-all">
+                <i data-lucide="send" class="w-4 h-4"></i>
+                <span>Send Message</span>
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="pt-8 pb-12 border-t border-slate-800/80 text-center space-y-2 text-xs font-mono text-slate-500">
+        <p>Built with Canvas API, JavaScript &amp; Tailwind CSS</p>
+        <p>&copy; 2026 Souraj Shil. All rights reserved.</p>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- =====================================================================
+       PROJECT DETAILS MODAL DIALOG
+       ===================================================================== -->
+  <div id="project-modal" class="modal-overlay">
+    <div class="modal-content glass-panel p-6 sm:p-8 space-y-6 relative">
+      <button id="modal-close-btn" class="absolute top-5 right-5 p-2 rounded-lg bg-slate-800/60 hover:bg-slate-700 text-slate-400 hover:text-white transition-colors">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="space-y-2">
+        <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono" id="modal-category">
+          Category
+        </div>
+        <h3 class="text-2xl font-heading font-bold text-white" id="modal-title">Pipeline Title</h3>
+        <p class="text-sm font-mono text-cyan-400" id="modal-subtitle">Subtitle</p>
+      </div>
+
+      <div class="w-full h-56 sm:h-72 rounded-xl overflow-hidden bg-slate-900 border border-slate-800">
+        <img id="modal-image" src="" alt="Project Preview" class="w-full h-full object-cover" />
+      </div>
+
+      <div class="space-y-4 text-sm text-slate-300 leading-relaxed">
+        <p id="modal-description">Pipeline Architecture &amp; Implementation</p>
+        <div class="space-y-2">
+          <div class="font-mono text-xs text-slate-400 font-semibold uppercase tracking-wider">Key Architecture Highlights:</div>
+          <ul id="modal-bullets" class="space-y-1.5 list-disc list-inside text-slate-300"></ul>
+        </div>
+      </div>
+
+      <div class="space-y-2 pt-2 border-t border-slate-800">
+        <div class="text-xs font-mono text-slate-500">TECH STACK &amp; CLOUD SERVICES:</div>
+        <div id="modal-tags" class="flex flex-wrap gap-1.5"></div>
+      </div>
+
+      <div class="flex items-center gap-3 pt-2">
+        <a id="modal-demo-btn" href="#" target="_blank" class="flex-1 py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 font-semibold text-sm flex items-center justify-center gap-2 hover:opacity-90 transition-all">
+          <i data-lucide="external-link" class="w-4 h-4"></i>
+          <span>Architecture Flow</span>
+        </a>
+        <a id="modal-github-btn" href="#" target="_blank" class="flex-1 py-2.5 rounded-xl glass-panel text-slate-200 font-medium text-sm flex items-center justify-center gap-2 hover:text-emerald-400 transition-all">
+          <i data-lucide="github" class="w-4 h-4"></i>
+          <span>GitHub Code</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container"></div>
+
+  <!-- Application Scripts -->
+  <script src="js/config.js?v=20260901_0133"></script>
+  <script src="js/fractal-tree.js?v=20260901_0133"></script>
+  <script src="js/playground.js?v=20260901_0133"></script>
+  <script src="js/app.js?v=20260901_0133"></script>
+</body>
+</html>
