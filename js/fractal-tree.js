@@ -54,11 +54,20 @@ class FractalTreeEngine {
 
   setupEvents() {
     window.addEventListener("resize", () => {
-      if (this.isRunning) this.resizeCanvas();
+      this.resizeCanvas();
     });
+
+    if (window.ResizeObserver && this.canvas.parentElement) {
+      this.resizeObserver = new ResizeObserver(() => {
+        this.resizeCanvas();
+      });
+      this.resizeObserver.observe(this.canvas.parentElement);
+    }
 
     const handlePointerMove = (clientX, clientY) => {
       const rect = this.canvas.getBoundingClientRect();
+      if (!rect.width || !rect.height) return;
+
       const x = clientX - rect.left;
       const y = clientY - rect.top;
 
@@ -102,21 +111,27 @@ class FractalTreeEngine {
     if (!parent) return;
 
     const rect = parent.getBoundingClientRect();
-    const width = Math.max(260, rect.width || 440);
-    const height = Math.max(260, rect.height || 440);
+    const displayWidth = Math.round(rect.width);
+    const displayHeight = Math.round(rect.height);
 
-    this.canvas.width = width * this.dpr;
-    this.canvas.height = height * this.dpr;
-    this.canvas.style.width = `${width}px`;
-    this.canvas.style.height = `${height}px`;
+    if (displayWidth <= 0 || displayHeight <= 0) return;
+
+    // Set internal drawing resolution for crisp rendering on high-DPI displays
+    this.canvas.width = Math.round(displayWidth * this.dpr);
+    this.canvas.height = Math.round(displayHeight * this.dpr);
+
+    // Ensure CSS display size is 100% fluid (never lock container with fixed pixel styles)
+    this.canvas.style.width = "100%";
+    this.canvas.style.height = "100%";
 
     this.ctx.setTransform(1, 0, 0, 1, 0, 0);
     this.ctx.scale(this.dpr, this.dpr);
-    this.displayW = width;
-    this.displayH = height;
+    this.displayW = displayWidth;
+    this.displayH = displayHeight;
 
-    // Existing fit calculation inside circular viewport with +45% balanced scale
-    const baseFit = Math.min(width, height) * 0.145;
+    // Sizing calculation strictly proportional to circular container diameter
+    const diameter = Math.min(displayWidth, displayHeight);
+    const baseFit = diameter * 0.145;
     const sizeAdjustmentFactor = 1.45;
     this.trunkLength = baseFit * sizeAdjustmentFactor;
   }
